@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root{
+    --black: #252321 ;
+    --white:#f5f3ef;
+}
 
 * {
     margin: 0;
@@ -9,6 +15,7 @@
 body {
     width: 100%;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--white);
 }
 
 .header {
@@ -16,8 +23,10 @@ body {
     width: 100%;
     text-align: center;
     height: 10vh;
-    background-color: rgba(0, 0, 0, 0.856);
-    color: white;
+    background-color: var(--black);
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
 }
 
 .main {
@@ -39,25 +48,25 @@ body {
 .divs {
     cursor: pointer;
     display: flex;
-    background: rgba(0, 0, 0, 0.856);
+    background: var(--black);
     justify-content: center;
     align-items: center;
     font-size: 5rem;
-    color: white;
+    color: var(--white);
 }
 .btn{
     width: 157px;
     height:40px;
-    background-color:white
+    background-color:var(--white);
 }
 .btnb:hover{
-    background-color:rgba(0, 0, 0, 0.856);
-    color:white;
+    background-color:var(--black);
+    color:var(--white);
     transition: 0.5s;
 }
 .btns:focus{
-    background-color:rgba(0, 0, 0, 0.856);
-    color:white;
+    background-color:var(--black);
+    color:var(--white);
 }
 
 .score-board{
