@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    height: 10vh;
+    background-color: wheat;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.divs {
+    cursor: pointer;
+    display: flex;
+    background: rgba(0, 0, 0, 0.836);
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: white;
+}
