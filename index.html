@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,20 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
     <header class="header">
         <h1>Tic-Tac-Toe</h1>
     </header>
     <div class="main">
+
+        <div id="mode" class="hidden">
+            <button id="Bot" class=" btn btns ai-btn">AI</button>
+            <button id="Player" class="btn btns player-btn">P vs P</button>
+        </div>
+
         <div class="message" id="message">Player X's turn</div>
+
         <div class="gameboard">
             <div class="divs" data-index="1"></div>
             <div class="divs" data-index="2"></div>
@@ -24,10 +33,25 @@
             <div class="divs" data-index="8"></div>
             <div class="divs" data-index="9"></div>
         </div>
-        <div class="bottom">
-            <button class="btn restart-btn" id="restart-btn">Restart</button>
+
+
+        <div class="Bottom">
+            <div>
+                <button class="btn btnb restart" id="restart-btn">Restart</button>
+                <button class="btn btnb playAgain" id="playagn-btn">Play Again</button>
+            </div>
+            <p id="Text"></p>
+        </div>
+
+
+        <div class="score-board ">
+            <div class="left-text">a</div>
+            <div class="left-score">0</div>
+            <div class="right-text">b</div>
+            <div class="right-score">0</div>
         </div>
     </div>
-    
+
 </body>
+
 </html>

@@ -9,10 +9,12 @@ body {
 }
 
 .header {
+    padding-top: 20px;
     width: 100%;
     text-align: center;
     height: 10vh;
-    background-color: wheat;
+    background-color: black;
+    color: white;
 }
 
 .main {
@@ -20,6 +22,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:20px;
+    padding-top: 30px;
 }
 
 .gameboard {
@@ -32,9 +36,23 @@ body {
 .divs {
     cursor: pointer;
     display: flex;
-    background: rgba(0, 0, 0, 0.836);
+    background: rgba(0, 0, 0, 0.932);
     justify-content: center;
     align-items: center;
     font-size: 5rem;
     color: white;
+}
+.btn{
+    width: 157px;
+    height:50px;
+    background-color:white
+}
+.btnb:hover{
+    background-color:black;
+    color:white;
+    transition: 0.5s;
+}
+.btns:focus{
+    background-color:black;
+    color:white;
 }
