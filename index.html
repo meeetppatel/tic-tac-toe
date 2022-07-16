@@ -16,18 +16,14 @@
     <div class="main">
 
         <div id="mode" class="hidden">
-            <button id="Bot" class=" btn btns ai-btn">AI</button>
+            <select id="Bot" class=" btn btns ai-btn">
+                <option value="easy">AI : Easy</option>
+                <option value="hard">AI : Hard</option>
+            </select>
             <button id="Player" class="btn btns player-btn">P vs P</button>
         </div>
 
         <div class="message" id="message">Player X's turn</div>
-
-        <div class="score-board ">
-            <div class="left-text">a</div>
-            <div class="left-score">0</div>
-            <div class="right-text">b</div>
-            <div class="right-score">0</div>
-        </div>
 
         <div class="gameboard">
             <div class="divs" data-index="1"></div>
@@ -47,7 +43,6 @@
                 <button class="btn btnb restart" id="restart-btn">Restart</button>
                 <button class="btn btnb playAgain" id="playagn-btn">Play Again</button>
             </div>
-            <p id="Text">lunn won</p>
         </div>
           
     </div>

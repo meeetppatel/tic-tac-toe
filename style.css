@@ -44,12 +44,6 @@ body {
     grid-template-rows: repeat(3, 100px);
     gap: 10px;
 }
-.bottom {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
 .divs {
     cursor: pointer;
@@ -61,9 +55,13 @@ body {
     color: var(--white);
 }
 .btn{
+    border: 1px solid var(--black);
     width: 157px;
     height:40px;
     background-color:var(--white);
+}
+select {
+    padding-left:20px;
 }
 .btnb:hover{
     background-color:var(--black);
@@ -73,11 +71,4 @@ body {
 .btns:focus{
     background-color:var(--black);
     color:var(--white);
-}
-
-.score-board{
-    display: grid;
-    grid-template-columns: repeat(2,100px);
-    text-align: center;
-    gap: 10px;
 }
