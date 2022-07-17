@@ -6,6 +6,7 @@ const restartbtn = document.getElementById("restart-btn");
 restartbtn.addEventListener("click", () => {
   window.location.reload();
   roundreset();
+  gameboard.reset();
 });
 
 // display controller
@@ -13,11 +14,17 @@ restartbtn.addEventListener("click", () => {
 const displaycontroller = (() => {
   const messageElement = document.getElementById("message");
 
+
   const setMessage = (message) => {
     messageElement.textContent = message;
   };
+
+
   return { setMessage };
 })();
+
+
+
 
 // gameboard
 const gameboard = (() => {
@@ -39,39 +46,54 @@ const gameboard = (() => {
     }
   };
 
-  return { setField, getField, reset };
+  return { setField, getField, reset ,board};
 })();
+
+
+
 
 // game
 const game = (() => {
   let round = 1;
   let isover = false;
 
-  const playerone = (box) => {
-    box.textContent = "X";
-  };
-  const playertwo = (box) => {
-    box.textContent = "O";
-  };
-
+  // const playerone = (box) => {
+  //   box.textContent = "X";
+  // };
+  // const playertwo = (box) => {
+  //   box.textContent = "O";
+  // };
   boxes.forEach((box) => {
     box.textContent = "";
-    box.addEventListener("click", () => {
-      if (round % 2 != 0 && box.textContent === "") {
-        displaycontroller.setMessage("Player O's turn");
-        playerone(box);
-        console.log("X");
-        round++;
-      } else if (round % 2 === 0 && box.textContent === "") {
-        displaycontroller.setMessage("Player X's turn");
-        playertwo(box);
-        console.log("O");
-        round++;
-      }
-      result();
+    box.addEventListener("click", (e) => {
+      playround(parseInt(e.target.dataset.index));
+      updategameboard();
       console.log(round);
     });
   });
+
+
+  const playround = (index) => {
+    gameboard.setField(index,getcurrentplayersign());
+    if(checkwinner(boxes)){
+      displaycontroller.setMessage(`Player ${getcurrentplayersign()} Won !`);
+      isover = true;
+      return;
+    }if(round >= 9){
+      displaycontroller.setMessage("Its'a Tie !");
+      isover= true;
+      return;
+    }
+    round++;
+    displaycontroller.setMessage(`Player ${getcurrentplayersign()}'s turn`);
+  }
+
+  const updategameboard = () => {
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].textContent = gameboard.getField(i);
+    }
+  }
+
 
   const roundreset = () => {
     round = 0;
@@ -93,33 +115,11 @@ const game = (() => {
     [2, 4, 6],
   ];
 
-  const checkwinner = (boxes) => {
+  const checkwinner = () => {
     return winconditions.some((innerArray) => {
       return innerArray.every((i) => {
-        return boxes[i].textContent === getcurrentplayersign();
+        return gameboard.getField(i) === getcurrentplayersign();
       });
     });
-    //   function wincheckO(boxes) {
-    //     let score = 0;
-    //     return winConditions.some((innerArray) => {
-    //       return innerArray.every((i) => {
-    //         return boxes[i].textContent === "O";
-    //       });
-    //     });
-    //   }
   };
-  const result = () => {
-    if (checkwinner(boxes)) {
-      console.log(checkwinner(boxes));
-      displaycontroller.setMessage(`player ${getcurrentplayersign()} won `);
-      roundreset();
-      return;
-    }
-    if (round >= 10) {
-      displaycontroller.setMessage("it's a tie");
-      roundreset();
-      return;
-    }
-  };
-  return { checkwinner, round };
 })();
