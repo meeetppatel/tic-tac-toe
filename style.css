@@ -60,9 +60,13 @@ body {
     font-size: 5rem;
     color: var(--white);
 }
+
+.btns{
+    width: 250px
+}
 .btn{
     border: 1px solid var(--black);
-    width: 200px;
+    width: 158px;
     height:40px;
     background-color:var(--white);
 }
