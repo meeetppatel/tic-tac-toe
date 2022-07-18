@@ -25,6 +25,10 @@ const displaycontroller = (() => {
     gameboard.reset();
   });
 
+  aimode.addEventListener("click", () => {
+    alert("WORKING ON IT!")
+  })
+
   mainmenu.addEventListener("click", () => {
     window.location.reload();
   });
