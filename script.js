@@ -57,12 +57,7 @@ const game = (() => {
   let round = 1;
   let isover = false;
 
-  // const playerone = (box) => {
-  //   box.textContent = "X";
-  // };
-  // const playertwo = (box) => {
-  //   box.textContent = "O";
-  // };
+
   boxes.forEach((box) => {
     box.textContent = "";
     box.addEventListener("click", (e) => {
